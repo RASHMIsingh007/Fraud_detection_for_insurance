@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auto Insurance Fraud Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-safe { color: green; font-weight: bold; }
+        .result-fraud { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Auto Insurance Fraud Detection</h1>
+        <p>Enter the claim details below to predict the likelihood of fraud.</p>
+        
+        <form action="/predict" method="post">
+            <div class="row g-3">
+                <!-- We'll select a few key features for this demo form -->
+                <div class="col-md-4">
+                    <label for="Months_as_Customer" class="form-label">Months as Customer</label>
+                    <input type="number" class="form-control" id="Months_as_Customer" name="Months_as_Customer" value="120" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Customer_Age" class="form-label">Policyholder Age</label>
+                    <input type="number" class="form-control" id="Customer_Age" name="Customer_Age" value="45" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Total_Claim" class="form-label">Total Claim Amount ($)</label>
+                    <input type="number" class="form-control" id="Total_Claim" name="Total_Claim" value="50000" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Injury_Claim" class="form-label">Injury Claim Amount ($)</label>
+                    <input type="number" class="form-control" id="Injury_Claim" name="Injury_Claim" value="15000" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Property_Claim" class="form-label">Property Claim Amount ($)</label>
+                    <input type="number" class="form-control" id="Property_Claim" name="Property_Claim" value="15000" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Vehicle_Claim" class="form-label">Vehicle Claim Amount ($)</label>
+                    <input type="number" class="form-control" id="Vehicle_Claim" name="Vehicle_Claim" value="20000" required>
+                </div>
+                 <div class="col-md-6">
+                    <label for="Incident_Severity" class="form-label">Incident Severity</label>
+                    <select class="form-select" id="Incident_Severity" name="Incident_Severity">
+                        <option>Trivial Damage</option>
+                        <option>Minor Damage</option>
+                        <option selected>Major Damage</option>
+                        <option>Total Loss</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="authorities_contacted" class="form-label">Authorities Contacted</label>
+                    <select class="form-select" id="authorities_contacted" name="authorities_contacted">
+                        <option>None</option>
+                        <option>Police</option>
+                        <option>Fire</option>
+                        <option selected>Ambulance</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Predict Fraud</button>
+        </form>
+
+        <!-- Prediction Result Section -->
+        {% if prediction_text %}
+        <div class="mt-5 p-4 bg-light border rounded">
+            <h2>Prediction Result</h2>
+            <p class="fs-4">The claim is predicted as: 
+                <span class="{{ 'result-fraud' if 'Fraud' in prediction_text else 'result-safe' }}">
+                    {{ prediction_text }}
+                </span>
+            </p>
+            <p><strong>Probability of Fraud:</strong> {{ probability_text }}%</p>
+            <p><strong>Risk Level:</strong> {{ risk_level }}</p>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>

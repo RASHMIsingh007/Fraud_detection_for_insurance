@@ -1,0 +1,62 @@
+Data Dictionary for Auto Insurance Fraud Claims Dataset
+-------------------------------------------------------------------------------------------------------------------
+Claim_ID: Unique identifier for each claim submitted by the policyholder
+Bind_Date1: The date when the insurance policy was bound, indicating policy activation
+Customer_Life_Value1: Estimated lifetime value of the customer, used for profitability analysis
+Age_Insured: Age of the insured person at the time of policy purchase
+Policy_Num: Unique identifier for the insurance policy
+Policy_State: State in which the insurance policy was issued
+Policy_Start_Date: Start date of the insurance coverage period
+Policy_Expiry_Date: End date of the insurance coverage period
+Policy_BI: Bodily Injury liability coverage limit of the policy
+Policy_Ded: Deductible amount the insured must pay before insurance coverage begins
+Policy_Premium: "Total premium amount (6 months) paid by the insured for the policy 
+Umbrella_Limit: Additional liability coverage beyond standard policy limits
+Insured_Zip: Zip code of the insured individual, useful for geographic analysis
+Gender: Gender of the insured individual
+Education: Education level of the insured, may correlate with claim patterns
+Occupation: Occupation of the insured, useful for risk profiling
+Hobbies: Hobbies of the insured, used to assess lifestyle risk factors
+Insured_Relationship: Relationship status of the insured with the policy owner
+Capital_Gains: Capital gains reported by the insured, could relate to financial profile
+Capital_Loss: Capital losses reported by the insured, useful in financial risk analysis
+Garage_Location: Location where the vehicle is usually parked, influences risk
+Accident_Date: Date on which the accident occurred
+Accident_Type: Type of accident (e.g., rear-end, sideswipe), useful for claim categorization
+Collision_Type: Nature of collision involved in the accident
+Accident_Severity: Severity level of the accident
+authorities_contacted: Indicates whether authorities were contacted post-accident
+Acccident_State: State in which the accident occurred
+Acccident_City: City where the accident occurred
+Accident_Location: Detailed location of the accident, often used for fraud detection
+Accident_Hour: Hour of the day when the accident happened, may reveal patterns
+Num_of_Vehicles_Involved: Number of vehicles involved in the incident
+Property_Damage: Whether there was property damage resulting from the accident
+Bodily_Injuries: Count of bodily injuries reported from the accident
+Witnesses: Number of witnesses present during the accident
+Police_Report: Indicates whether a police report was filed
+DL_Expiry_Date: Expiration date of the driver’s license of the insured
+Claims_Date: Date when the insurance claim was filed
+Auto_Make: Manufacturer of the insured vehicle
+Auto_Model: Model name of the insured vehicle
+Auto_Year: Year the vehicle was manufactured
+Vehicle_Color: Color of the insured vehicle
+Vehicle_Cost: Cost of the insured vehicle at the time of policy issue
+Annual_Mileage: Estimated annual mileage of the insured vehicle
+DiffIN_Mileage: Difference in reported vs. actual mileage, used in validation with reference to accident date
+Low_Mileage_Discount: Discount applied for vehicles with low mileage, if annual miles < 7500
+Fraud_Ind: Indicator if the claim is suspected or confirmed fraud (Y/N)
+Commute_Discount: Discount offered for car pool commuting
+Total_Claim: Total amount claimed under the policy for accident
+Injury_Claim: Claim amount attributed to injuries
+Property_Claim: Claim amount for property damage
+Vehicle_Claim: Claim amount specific to vehicle damage
+Vehicle_Registration: Registration number of the vehicle involved
+Check_Point: Used for internal verification or check status by underwriters
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
